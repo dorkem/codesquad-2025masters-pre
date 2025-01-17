@@ -1,4 +1,4 @@
-package q1;
+package week2.q1;
 
 public class charArray {
     public static void main(String[] args) {
