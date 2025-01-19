@@ -13,6 +13,7 @@ public class Student {
         this.name = name;
         this.major = major;
         studentNumber = ++studentID;
+        this.subjects = new ArrayList<>();
     }
 
     public void addSubject(String subject, int score) {

@@ -22,10 +22,12 @@ public class School {
         return s;
     }
 
-    public void printStudents() {
-        for (Student s : students) {
-            System.out.println(s.getName() + "학생은 " + s.getSubjectCount()+"과목을 수강했습니다.");
-            System.out.println("총점은 "+s.getTotal()+"점이고 평균은 " + s.getAverage()+"점입니다.");
+    public void printStudents(Student student) {
+        if (students.contains(student)) {
+            System.out.println(student.getName() + "학생은 " + student.getSubjectCount()+"과목을 수강했습니다.");
+            System.out.println("총점은 "+student.getTotal()+"점이고 평균은 " + String.format("%.2f", student.getAverage())+"점입니다.");
+        } else {
+            System.out.println("해당 학생은 등록되어 있지 않습니다.");
         }
     }
 }
