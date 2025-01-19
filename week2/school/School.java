@@ -21,4 +21,11 @@ public class School {
         students.add(s);
         return s;
     }
+
+    public void printStudents() {
+        for (Student s : students) {
+            System.out.println(s.getName() + "학생은 " + s.getSubjectCount()+"과목을 수강했습니다.");
+            System.out.println("총점은 "+s.getTotal()+"점이고 평균은 " + s.getAverage()+"점입니다.");
+        }
+    }
 }
