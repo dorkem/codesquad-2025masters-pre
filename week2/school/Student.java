@@ -20,12 +20,25 @@ public class Student {
         subjects.add(new Subject(subject, score));
     }
 
+
     public String getName() {
         return name;
     }
 
+    public int getStudentNumber() {
+        return studentNumber;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
     public int getSubjectCount() {
         return subjects.size();
+    }
+
+    public ArrayList<Subject> getSubjects() {
+        return subjects;
     }
 
     public int getTotal() {
@@ -39,5 +52,17 @@ public class Student {
     public double getAverage() {
         if (subjects.isEmpty()) return 0;
         return (double) getTotal() / subjects.size();
+    }
+
+    public void setScore(String subjectName, int score) {
+        for (Subject subject : subjects) {
+            if (subject.getName().equals(subjectName)) {
+                subjects.remove(subject);
+                addSubject(subjectName, score);
+                System.out.println("업데이트 되었습니다.");
+                return;
+            }
+        }
+        System.out.println(subjectName + " 과목을 찾을 수 없습니다.");
     }
 }
