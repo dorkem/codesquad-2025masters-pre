@@ -1,4 +1,4 @@
-package week3.Problem1;
+package week3.Problem1.member;
 
 public class PlatinumMember extends Member {
     double saleRate;
