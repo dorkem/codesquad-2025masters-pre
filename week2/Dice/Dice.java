@@ -12,4 +12,8 @@ public class Dice {
     public int throwDice(){
         return random.nextInt(6)+1;
     }
+
+    public void printDiceNumber(int result) {
+        System.out.println("주사위 결과: " + result);
+    }
 }
