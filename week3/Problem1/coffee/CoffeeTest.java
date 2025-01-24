@@ -1,6 +1,7 @@
 package week3.Problem1.coffee;
 
 import week3.Problem1.coffee.bean.*;
+import week3.Problem1.coffee.decorators.*;
 
 public class CoffeeTest {
 
@@ -26,6 +27,5 @@ public class CoffeeTest {
                 new WhippedCream(new Mocha(new Latte( new HawaiiAmericano())));
         hawaiiWhippedMocha.brewing();
         System.out.println();
-
     }
 }
