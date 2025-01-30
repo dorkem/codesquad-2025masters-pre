@@ -5,16 +5,20 @@ import java.util.ArrayList;
 public class Subject {
     private String name;
     private ArrayList<Score> scores;
+    private String evaluationType;
 
-    public Subject(String name) {
+    public Subject(String name, String evaluationType) {
         this.name = name;
         scores = new ArrayList<>();
+        this.evaluationType = evaluationType;
     }
 
     public void addScore(Student student, int score) {
         GradeEvaluation evaluator;
-
-        if (student.getRequiredSubject().equals(name)) {
+        if ("PASS_FAIL".equals(evaluationType)) {
+            evaluator = new PassFailEvaluation();
+        }
+        else if (student.getRequiredSubject().equals(name)) {
             evaluator = new MajorEvaluation();
         } else {
             evaluator = new BasicEvaluation();
