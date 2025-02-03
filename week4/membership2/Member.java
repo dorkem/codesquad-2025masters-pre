@@ -1,0 +1,37 @@
+package week4.membership2;
+
+import java.util.Objects;
+
+public class Member {
+    private int id;
+    private String name;
+    private GRADE grade;
+
+    public Member(int id, String name, GRADE grade) {
+        this.id = id;
+        this.name = name;
+        this.grade = grade;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(id);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Member member = (Member) o;
+        return id == member.id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return name+"님의 아이디는 " + id + "이고 등급은 " + grade + "입니다.";
+    }
+}
